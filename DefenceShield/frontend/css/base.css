@@ -1,0 +1,90 @@
+/*
+ * ============================================================
+ *  DefenceShield — BASE CSS
+ *  Global Variables, Reset, Typography, Scrollbar
+ *  FILE: frontend/css/base.css
+ * ============================================================
+ */
+
+/* ─── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700&display=swap');
+
+/* ─── CSS Design Tokens ─────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg:       #040a12;
+  --surface:  #071422;
+  --surface2: #0b1e34;
+  --surface3: #0f2540;
+
+  /* Brand Colors */
+  --accent:  #00d4ff;   /* Cyan  — primary interactive */
+  --accent2: #00ff9d;   /* Green — PQC / success */
+  --accent3: #ff6b35;   /* Orange — warnings */
+  --danger:  #ff2b2b;   /* Red   — errors / denied */
+  --warn:    #ffc107;   /* Amber — caution */
+
+  /* Text */
+  --text:  #c8e6ff;
+  --muted: #5a8aaa;
+
+  /* Borders */
+  --border:  rgba(0, 212, 255, 0.2);
+  --border2: rgba(0, 212, 255, 0.4);
+
+  /* Effects */
+  --glow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* ─── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ─── Base Body ──────────────────────────────────────────────── */
+body {
+  font-family: 'Exo 2', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ─── Animated Grid Background ───────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Typography Helpers ─────────────────────────────────────── */
+.font-mono  { font-family: 'Share Tech Mono', monospace; }
+.font-title { font-family: 'Rajdhani', sans-serif; }
+
+/* ─── Custom Scrollbar ───────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ─── Utility Classes ────────────────────────────────────────── */
+.text-accent  { color: var(--accent); }
+.text-green   { color: var(--accent2); }
+.text-danger  { color: var(--danger); }
+.text-muted   { color: var(--muted); }
+.text-warn    { color: var(--warn); }

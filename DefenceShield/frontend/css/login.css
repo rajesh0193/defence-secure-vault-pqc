@@ -1,0 +1,172 @@
+/*
+ * ============================================================
+ *  DefenceShield — LOGIN CSS
+ *  Login Screen, Emblem, Auth Form
+ *  FILE: frontend/css/login.css
+ * ============================================================
+ */
+
+/* ─── Login Screen Layout ────────────────────────────────────── */
+#loginScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* ─── Animated Emblem ────────────────────────────────────────── */
+.login-emblem {
+  width: 100px;
+  height: 100px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  box-shadow: var(--glow), inset 0 0 30px rgba(0,212,255,0.1);
+  animation: rotateBorder 10s linear infinite;
+}
+
+.login-emblem::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,212,255,0.2);
+  border-top-color: var(--accent);
+  animation: rotateBorder 3s linear infinite;
+}
+
+.emblem-svg { width: 60px; height: 60px; }
+
+@keyframes rotateBorder {
+  to { transform: rotate(360deg); }
+}
+
+/* ─── System Title ───────────────────────────────────────────── */
+.sys-title {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--accent);
+  text-shadow: var(--glow);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.sys-subtitle {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 3px;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* ─── Login Box ──────────────────────────────────────────────── */
+.login-box {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--glow);
+}
+
+.login-box h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* ─── Form Fields ────────────────────────────────────────────── */
+.field-group { margin-bottom: 1.2rem; }
+
+.field-group label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.field-group select,
+.field-group input {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.7rem 1rem;
+  color: var(--text);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field-group select:focus,
+.field-group input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(0,212,255,0.2);
+}
+
+.field-group select option { background: var(--surface2); }
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+.btn-primary {
+  width: 100%;
+  padding: 0.8rem;
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: var(--glow);
+}
+
+.btn-primary:hover {
+  background: rgba(0,212,255,0.1);
+  box-shadow: 0 0 30px rgba(0,212,255,0.4);
+}
+
+/* ─── Error Message ──────────────────────────────────────────── */
+.error-msg {
+  color: var(--danger);
+  font-size: 0.75rem;
+  font-family: 'Share Tech Mono', monospace;
+  text-align: center;
+  margin-top: 0.8rem;
+  min-height: 1.2em;
+}
+
+/* ─── PQC Badge ──────────────────────────────────────────────── */
+.pqc-badge {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--accent2);
+  letter-spacing: 2px;
+  padding: 0.5rem;
+  border: 1px solid rgba(0,255,157,0.2);
+  border-radius: 4px;
+  background: rgba(0,255,157,0.04);
+}
